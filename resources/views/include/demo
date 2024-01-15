@@ -1,0 +1,4618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheels on Lease</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+
+        headertop {
+            display: none;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f4f7f9;
+            padding: 3px 20px;
+            color: rgb(0, 0, 0);
+            padding-right: 0.3cm;
+            padding-left: 0.3cm;
+        }
+
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f8ffff;
+            padding: 10px 20px;
+            color: rgb(0, 0, 0);
+            padding-right: 1.5cm;
+            padding-left: 1.5cm;
+        }
+
+        headertwo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #f4f7f9;
+            padding: 5px 20px;
+            color: rgb(0, 0, 0);
+            padding-right: 1.5cm;
+            padding-left: 1.5cm;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            cursor:default;
+        }
+
+
+
+
+
+
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+            width: 90%;
+            margin-left: 20px;
+            margin-right: -90px;
+            padding-left: 2cm;
+        }
+
+        .search-bar input[type="text"] {
+            padding: 10px;
+            font-size: 17px;
+            border: 1px solid grey;
+            width: 75%;
+            background: #f1f1f1;
+            border-start-start-radius: 5px;
+            border-end-start-radius: 5px;
+        }
+
+        .search-bar button {
+            border-start-end-radius: 5px;
+            border-end-end-radius: 5px;
+            width: 50px;
+            padding: 10px;
+            background: #2196F3;
+            color: white;
+            font-size: 17px;
+            border: 1px solid grey;
+            border-left: none;
+            cursor: pointer;
+        }
+
+        .search-bar button:hover {
+            background: #0b7dda;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .login-register {
+    display: flex;
+
+}
+
+
+
+
+
+.login-box {
+    border: 1px solid #373D3F;
+    padding: 10px 18px;
+    margin: 0 20px;
+    text-decoration: none; /* Remove text decoration from the <a> tags */
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer; /* Change cursor to indicate clickability */
+    border-radius: 5px;
+}
+
+.register-box {
+    border: 1px solid #373D3F;
+    padding: 10px 18px;
+    margin: 0 0px;
+    text-decoration: none; /* Remove text decoration from the <a> tags */
+    transition: background-color 0.3s, color 0.3s;
+    cursor: pointer; /* Change cursor to indicate clickability */
+    border-radius: 5px;
+}
+
+
+.login-box div,
+.register-box div {
+    color: #373D3F;
+    font-weight: bold;
+}
+
+.login-box:hover,
+.register-box:hover {
+    background-color: #373D3F;
+    color: #fff;
+}
+
+.login-box:hover div,
+.register-box:hover div {
+    color: #fff;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        .categoriesextra a {
+            color: #373D3F;
+            text-decoration: none;
+            margin-left: 36px;
+            font-weight: bold;
+        }
+
+        .categories {
+            color: #000000;
+            text-decoration: none;
+            margin-left: 38px;
+            font-weight: bold;
+            cursor:default;
+        }
+        .categoriesextra a:hover {
+              color: #ff0000;
+               }
+
+
+
+
+
+
+
+
+        /* Add arrow styling */
+
+        /* Responsive Dropdown Styles */
+        .categoriesextras {
+            display: flex;
+            align-items: center;
+
+        }
+
+        .categoriesextras a {
+            color: #f50606;
+            text-decoration: none;
+            margin-left: 30px;
+            font-weight: bold;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        .categoriesextras a:hover {
+              color: #000000;
+               }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               .dropdown {
+            min-width: 15%;
+            position: relative;
+            margin-left: 2em;
+            margin-right: -2em;
+
+
+        }
+
+        .dropdown * {
+            box-sizing: border-box;
+        }
+
+        .select {
+            background: #f1f1f1;
+            color: rgb(101, 100, 100);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border: 1px grey solid;
+            border-radius: 5px;
+            padding: 10px;
+            padding-left: 0.3cm;
+            padding-right: 0.4cm;
+            cursor: pointer;
+        }
+
+
+
+        .select:hover {
+            background:#dcdcdc;
+        }
+
+        .caret {
+            width: 0.2cm;
+            height: 0cm;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 8px solid #000000;
+            transition: 0.3s;
+        }
+
+        .caret-rotate {
+            transform: rotate(180deg);
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0.2em 0.5em;
+            background: #ffffff;
+            border: 1px #363a43 solid;
+            box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+            border-radius: 0.5em;
+            color: #373D3F;
+            position: absolute;
+            top: 3em;
+            left: 50%;
+            width: 100%;
+            transform: translateX(-50%);
+            opacity: 0;
+            display: none;
+            transition: 0.2s;
+            z-index: 1;
+
+
+        }
+
+        .menu li {
+            padding: 0.7em 0.5em;
+            margin: 0.3em 0;
+            border-radius: 0.5em;
+            cursor: pointer;
+        }
+
+        .menu li:hover {
+            background: #dcdcdc;
+        }
+
+        .active {
+            background: #ffffff;
+        }
+
+        .menu-open {
+            display: block;
+            opacity: 1;
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    headertwo .login-register
+    {
+        display:none;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @media screen and (max-width: 1400px) {
+            .search-bar {
+                display: flex;
+                align-items: center;
+                margin-left: 0px;
+                padding-left: 2cm;
+            }
+
+
+
+            .categoriesextras {
+                display: flex;
+                align-items: flex-end;
+
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+        /* Media Query for Phone Screen */
+        @media screen and (max-width: 1300px) {
+
+            .categoriesextras {
+                display: flex;
+                align-items: flex-end;
+
+            }
+            .categories {
+                margin-left: 3px;
+            }
+
+
+
+
+            .search-bar {
+                display: flex;
+                align-items: center;
+                margin-left: 0px;
+                padding-left: 1cm;
+            }
+
+
+            header {
+            padding-right: 0.5cm;
+            padding-left: 0.5cm;
+        }
+
+        headertwo {
+            padding-right: 0.5cm;
+            padding-left: 0.5cm;
+        }
+
+        .search-bar {
+
+                padding-left: 2cm;
+            }
+
+            .dropdown {
+
+margin-left: 1.5em;
+margin-right: -2em;
+
+
+}
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+        @media screen and (max-width: 1185px) {
+
+
+        .search-bar {
+
+padding-left: 1.3cm;
+}
+
+
+.select {
+
+padding-left: 0.2cm;
+padding-right: 0.2cm;
+
+}
+
+.dropdown {
+
+            margin-left: 1em;
+            margin-right: -2em;
+
+
+        }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+        @media screen and (max-width: 1152px) {
+
+
+
+
+
+
+
+
+
+            .login-register a {
+            color: #373D3F;
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: bold;
+        }
+
+
+
+.login-box, .register-box {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    text-decoration: 0; /* Remove text decoration from the <a> tags */
+    transition: background-color 0;
+    cursor:0; /* Change cursor to indicate clickability */
+    border-radius: 0;
+}
+
+.login-box div,
+    .register-box div {
+        color: initial; /* Reset color for smaller screens */
+        font-weight: bold; /* Reset font weight for smaller screens */
+    }
+
+    .login-box:hover,
+    .register-box:hover {
+        background-color: initial; /* Reset background color for smaller screens */
+        color: initial; /* Reset text color for smaller screens */
+    }
+
+    .login-box:hover div,
+.register-box:hover div {
+    color: #fc0303;
+}
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @media screen and (max-width: 1104px) {
+
+
+
+
+            headertwo {
+
+padding: 2px 20px;
+
+}
+
+
+
+
+        .categoriesextra {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 100px;
+                padding-left: 1px;
+                align-items: flex-start;
+
+                margin-left: -0.2cm;
+
+            }
+
+            .categoriesextra a {
+                font-weight: bold;
+            }
+
+            .categories.active + .categoriesextra {
+                display: flex;
+            }
+
+            .categories {
+                margin-left: 18px;
+                cursor: pointer;
+            }
+
+            .categories::after {
+                content: "▼";
+                margin-left: 3px;
+            }
+
+            .categories.active::after {
+                content: "▲";
+            }
+
+
+
+
+            .login-register{
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+
+         .register-box {
+
+padding-top: 0.12cm;
+
+}
+
+
+
+
+.categoriesextras {
+                display: flex;
+                flex-direction: row;
+                align-items: flex-end;
+
+            }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @media screen and (max-width: 1020px) {
+
+
+
+            .search-bar {
+
+padding-left: 1.3cm;
+}
+
+
+header {
+            padding-right: 0.3cm;
+            padding-left: 0.3cm;
+        }
+
+        headertwo {
+            padding-right: 0.3cm;
+            padding-left: 0.3cm;
+        }
+
+
+        .dropdown {
+            margin-left: 0.5em;
+            margin-right: -2em;
+
+        }
+
+        .select {
+
+padding-left: 0.15cm;
+padding-right: 0.12cm;
+}
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        @media screen and (max-width: 955px) {
+            .categories {
+                margin-left: 3px;
+            }
+            .categoriesextra {
+                margin-left: -0.7cm;
+            }
+
+            .logo {
+            font-size: 22px;
+        }
+
+        .categories {
+            font-size: 15px;
+        }
+
+
+
+
+        .dropdown {
+            min-width: 16%;
+        }
+
+
+
+
+
+
+
+        }
+
+
+
+        @media screen and (max-width: 880px) {
+
+
+  .search-bar{
+
+  }
+
+            .logo {
+            font-size: 21px;
+        }
+
+
+
+        .select {
+            height:1.2cm;
+        }
+
+        .search-bar input[type="text"] {
+            height:1.2cm;
+
+        }
+
+        .search-bar button {
+            height:1.2cm;
+
+        }
+
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+        @media screen and (max-width: 840px) {
+
+
+            .search-bar input[type="text"]
+            {
+
+                height: 42px;
+            }
+            .search-bar button {
+                height: 42px;
+                width: 45px;
+                padding: 8px;
+        }
+
+        .search-bar
+        {
+            padding-right: 0.25cm;
+        }
+
+        .select
+        {
+            height: 42px;
+        }
+
+
+            #searchBar input::placeholder {
+    font-size: 16px; /* Adjust the font size as needed */
+   }
+
+   .select {
+    font-size: 15px;
+        }
+
+        .login-register
+        {
+            font-size: 15px;
+        }
+
+        .categoriesextra {
+
+top: 95px;
+
+
+}
+
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+        @media screen and (max-width: 804px) {
+
+
+
+            headertwo {
+
+padding: 1px 10px;
+
+}
+
+
+
+            .logo
+            {
+                font-size: 22.1px;
+            }
+
+
+  .search-bar
+  {
+    margin-right: -10px;
+  }
+
+  .search-bar input[type="text"]
+            {
+
+                width: 95%;
+            }
+            .dropdown
+            {
+                min-width: 18%;
+            }
+
+
+
+
+
+            .register-box {
+
+padding-top: 0cm;
+
+}
+
+            .login-register
+    {
+        align-items: center;
+        flex-direction: row;
+        font-size: 17px;
+
+    }
+
+    .categoriesextra {
+
+top: 90px;
+margin-left: -0.8cm;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+        header .login-register
+    {
+        display:none;
+    }
+
+
+
+
+
+
+
+
+
+        headertwo .login-register
+    {
+        display:flex;
+    }
+
+
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+
+        @media screen and (max-width: 743px) {
+
+            .logo {
+            font-size: 20px;
+        }
+
+        .select {
+    font-size: 14px;
+        }
+
+        #searchBar input::placeholder {
+         font-size: 15px;
+            }
+
+
+
+
+
+            .categories
+            {
+                font-size: 14px;
+            }
+            .categoriesextra {
+                font-size: 15px;
+            }
+
+            .categoriesextras
+            {
+                font-size: 14.9px;
+            }
+            .login-register
+            {
+                font-size: 17px;
+            }
+
+
+
+        }
+
+
+
+
+
+
+
+
+
+        @media screen and (max-width: 698px) {
+
+
+       .logo
+       {
+        font-size: 19.3px;
+       }
+
+
+        .search-bar input[type="text"]
+            {
+                height: 38px;
+            }
+            .search-bar button {
+                height: 38px;
+                width: 45px;
+                padding: 5px;
+         }
+
+        .select
+        {
+            height: 38px;
+        }
+
+
+            #searchBar input::placeholder {
+         font-size: 13px; /* Adjust the font size as needed */
+           }
+
+           .select
+           {
+            font-size: 13.5px;
+           }
+           .select {
+
+padding-left: 0.1cm;
+padding-right: 0.1cm;
+}
+
+.menu{
+    font-size: 14px;
+}
+
+.categoriesextra{
+    top: 85px;
+}
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ @media screen and (max-width: 646px) {
+
+
+    headertop{
+        display: flex;
+    }
+    header {
+            padding: 1px 10px;
+        }
+        headertwo {
+            padding: 6px 1px;
+        }
+
+
+
+
+
+
+
+
+
+
+        headertop .dropdown
+        {
+            display: none;
+        }
+
+
+
+
+
+
+
+     header .logo
+     {
+        display: none;
+     }
+    headertwo .login-register
+    {
+        display: none;
+    }
+    .categories
+    {
+        display: none;
+    }
+    .search-bar
+    {
+        width: 80%;
+        padding-left: 0.2cm;
+    }
+
+    #searchBar input::placeholder {
+         font-size: 15px;
+            }
+
+
+
+    .dropdown
+    {
+        width: 3.5cm;
+        margin-left: 0cm;
+        margin-right: 0.1cm;
+
+    }
+
+    .select
+           {
+            font-size: 14px;
+           }
+
+
+
+
+
+           headertwo {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+
+    .categoriesextras
+    {
+        display: flex;
+        font-size: 14px;
+        justify-content: center;
+        align-items: center;
+        margin-right: 28px;
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .navbar {
+            background-color: #fff8f8;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 5px 0px;
+        }
+
+
+    .menus-icon {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+
+        }
+
+        .bar {
+            background-color: #000000;
+            height: 3px;
+            width: 100%;
+            transition: transform 0.3s ease-in-out;
+        }
+
+
+        .menus {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    top: 37px;
+    right: -100%;
+    background-color: #000000;
+    width: 100%;
+    height: calc(100%); /* when we add footer use  height: calc(100% - 50px);  here */
+    padding: 20px 0;
+    z-index: 1;
+    transition: right 0.2s ease-in-out;
+    overflow-y: auto;
+}
+
+
+.menus-button {
+            margin: 10px 0;
+            transition: opacity 0.3s ease-in-out;
+            margin-top: 23px;
+            border-bottom: 2px  solid #fff;
+            border-bottom-left-radius: 0.1cm;
+        }
+
+        .menus-button a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px; /* Increase font size */
+            margin-left: 10px; /* Add space between items */
+            padding-bottom: 3.5cm;
+        }
+
+        .menus-button a:hover {
+            text-decoration: underline;
+        }
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+
+
+
+
+
+ @media screen and (max-width: 540px)
+
+ {
+    #searchBar input::placeholder {
+         font-size: 14px;
+            }
+
+
+            .dropdown
+    {
+        width: 3cm;
+
+
+    }
+
+    .select
+           {
+            font-size: 13px;
+           }
+
+
+
+
+
+ }
+
+
+
+
+
+
+
+
+
+ @media screen and (max-width: 420px)
+
+ {
+
+     header .dropdown
+     {
+        display: none;
+     }
+
+     headertop .dropdown{
+        display: flex;
+     }
+
+
+
+
+     .search-bar
+     {
+        width: 100%;
+        padding-left: 0cm;
+        padding-right: 0cm;
+     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     .dropdown {
+            min-width: 15%;
+            position: relative;
+            margin-left: -1.5em;
+            margin-right: -2em;
+
+
+
+        }
+
+        .dropdown * {
+            box-sizing: border-box;
+        }
+
+        .select {
+            background: #f1f1f1;
+            color: rgb(101, 100, 100);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border:0.5px grey solid;;
+            border-radius: 5px;
+            padding: 11px;
+            padding-left: 0.1cm;
+            padding-right: 0.1cm;
+            cursor: pointer;
+            height: 0px;
+            width:2.8cm;
+
+        }
+
+        .select:hover {
+            background:#dcdcdc;
+        }
+
+        .caret {
+            width: 0.2cm;
+            height: 0cm;
+            border-left: 7px solid transparent;
+            border-right: 7px solid transparent;
+            border-top: 8px solid #000000;
+            transition: 0.3s;
+            margin-left: 0.3cm;
+        }
+
+        .caret-rotate {
+            transform: rotate(180deg);
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0.2em 0.5em;
+            background: #ffffff;
+            border: 1px #363a43 solid;
+            box-shadow: 0 0.5em 1em rgba(0, 0, 0, 0.2);
+            border-radius: 0.5em;
+            color: #373D3F;
+            position: absolute;
+            top: 1.7em;
+            left: 46%;
+            width: 93%;
+            transform: translateX(-50%);
+            opacity: 0;
+            display: none;
+            transition: 0.2s;
+            z-index: 1;
+
+
+        }
+
+        .menu li {
+            padding: 0.5em 0.3em;
+            margin: 0.3em 0;
+            border-radius: 0.5em;
+            cursor: pointer;
+        }
+
+        .menu li:hover {
+            background: #dcdcdc;
+        }
+
+        .active {
+            background: #ffffff;
+        }
+
+        .menu-open {
+            display: block;
+            opacity: 1;
+        }
+
+
+
+
+
+
+
+
+
+
+
+ }
+
+
+
+
+ @media screen and (max-width: 343px)
+
+{
+    .categoriesextras
+            {
+                font-size: 12.6px;
+            }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </style>
+
+
+
+</head>
+<body>
+
+
+    <headertop>
+        <div class="logo">WheelsonLease</div>
+
+
+
+
+
+
+
+        <div class="dropdown">
+            <div class="select">
+                <span class="selected">Kochi</span>
+                <div class="caret"></div>
+            </div>
+            <ul class="menu">
+                <li>Malappuram</li>
+                <li>Kozhikode</li>
+                <li>Trivandrum</li>
+                <li class="active">Kochi</li>
+                <li>Ponnani</li>
+            </ul>
+        </div>
+
+
+
+
+
+
+        <div class="navbar">
+            <div class="menus-icon" id="menus-icon">
+                <div class="bar" id="bar1"></div>
+                <div class="bar" id="bar2"></div>
+                <div class="bar" id="bar3"></div>
+            </div>
+            <div class="menus" id="menus">
+                <div class="menus-button">
+                    <a href="{{ route('login') }}" id="login-button">🔒 Login</a>
+                </div>
+                <div class="menus-button">
+                    <a href id="register-button">📝 Register</a>
+                </div>
+
+                <div class="menus-button">
+                    <a href id="offers">💰 Offers</a>
+                </div>
+
+                <div class="menus-button">
+                    <a href id="vehicle-lease-button">🚗 Make Vehicle lease</a>
+                </div>
+
+
+                <div class="menus-button">
+                    <a href id="vehicle-rent-button">🚗 Make Vehicle Rent</a>
+                </div>
+
+
+                <div class="menus-button">
+                    <a href id="terms and conditions">📜 Terms & Conditions</a>
+                </div>
+                <div class="menus-button">
+                    <a href id="Privacy Policy">🔐 Privacy Policy</a>
+                </div>
+                <div class="menus-button">
+                    <a href id="contact us">📞 Contact Us</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </headertop>
+
+
+    <header>
+        <div class="logo">WheelsonLease</div>
+        <div class="dropdown">
+            <div class="select">
+                <span class="selected">Kochi</span>
+                <div class="caret"></div>
+            </div>
+            <ul class="menu">
+                <li>Malappuram</li>
+                <li>Kozhikode</li>
+                <li>Trivandrum</li>
+                <li class="active">Kochi</li>
+                <li>Ponnani</li>
+            </ul>
+        </div>
+        <div class="search-bar" id="searchBar">
+            <input type="text" placeholder="Search for Cars and Bikes for Rents, Lease and more..." >
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
+
+
+        <div class="login-register">
+            <a href="login" class="login-box">
+                <div>Login</div>
+            </a>
+            <a href="registration" class="register-box">
+                <div>Register</div>
+            </a>
+        </div>
+
+
+    </header>
+
+
+    <headertwo>
+
+
+        <div class="categories">ALL CATEGORIES</div>
+        <div class="categoriesextra">
+            <a href="">Cars for rent</a>
+            <a href="">Bikes for rent</a>
+            <a href="">Cars for lease</a>
+            <a href="">Bikes for lease</a>
+        </div>
+
+    </div>
+        <div class="categoriesextras">
+            <a href="">make vehicle Rent</a>
+            <a href="">make vehicle Lease</a>
+        </div>
+
+
+        <div class="login-register">
+            <a href="login" class="login-box">
+                <div>Login</div>
+            </a>
+            <a href="registration" class="register-box">
+                <div>Register</div>
+            </a>
+        </div>
+
+    </headertwo>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- JavaScript for the responsive dropdown -->
+    <script>
+        const categories = document.querySelector('.categories');
+        const categoriesExtras = document.querySelector('.categoriesextra');
+
+        categories.addEventListener('click', () => {
+            categories.classList.toggle('active');
+        });
+
+
+
+
+
+
+
+
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    const selectedOption = getSelectedOption();
+
+    // Set the initial selected option
+    document.querySelector('.selected').textContent = selectedOption;
+
+
+
+
+
+    dropdowns.forEach(dropdown => {
+        const select = dropdown.querySelector('.select');
+        const caret = dropdown.querySelector('.caret');
+        const menu = dropdown.querySelector('.menu');
+        const options = dropdown.querySelectorAll('.menu li');
+        const selected = dropdown.querySelector('.selected');
+
+        // Set the initial selected option
+        selected.innerText = selectedOption;
+
+        select.addEventListener('click', () => {
+            select.classList.toggle('select-clicked');
+            caret.classList.toggle('caret-rotate');
+            menu.classList.toggle('menu-open');
+        });
+
+
+
+
+
+
+
+
+
+
+        document.addEventListener('click', (event) => {
+            if (!dropdown.contains(event.target)) {
+                select.classList.remove('select-clicked');
+                caret.classList.remove('caret-rotate');
+                menu.classList.remove('menu-open');
+            }
+        });
+    document.addEventListener('click', (event) => {
+        if (!categories.contains(event.target) && !categoriesExtras.contains(event.target)) {
+            categories.classList.remove('active');
+            categoriesExtras.classList.remove('show');
+        }
+    });
+
+
+
+
+
+
+
+
+
+
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                selected.innerText = option.innerText;
+                select.classList.remove('select-clicked');
+                caret.classList.remove('caret-rotate');
+                menu.classList.remove('menu-open');
+                options.forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                option.classList.add('active');
+
+                // Store the selected option in localStorage
+                localStorage.setItem('selectedOption', option.innerText);
+            });
+        });
+    });
+});
+
+// Function to get the selected option from localStorage
+function getSelectedOption() {
+    return localStorage.getItem('selectedOption') || 'Kochi';
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+function updatePlaceholder() {
+    var searchBar = document.getElementById("searchBar");
+    var input = searchBar.querySelector("input");
+
+    if (window.innerWidth >= 955) {
+        input.placeholder = "Search for Cars and Bikes for Rents, Lease and more...";
+    } else if (window.innerWidth < 500) {
+        input.placeholder = "Search for Rents, lease and more...";
+    } else {
+        input.placeholder = "Search for wheels for Rents, Lease and more...";
+    }
+}
+
+// Run the function on page load and when the window size changes
+window.onload = updatePlaceholder;
+window.onresize = updatePlaceholder;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const menuIcon = document.getElementById('menus-icon');
+        const menu = document.getElementById('menus');
+        const loginButton = document.getElementById('login-button');
+        const registerButton = document.getElementById('register-button');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+
+        let isMenuOpen = false;
+
+        menuIcon.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+                menu.style.right  = '0';
+                // Change the icon to a close button with a cross
+                bar1.style.transform = 'rotate(45deg)';
+                bar1.style.position = 'absolute';
+                bar1.style.top = '15px';
+                bar3.style.transform = 'rotate(-45deg)';
+                bar3.style.position = 'absolute';
+                bar3.style.top = '15px';
+                bar2.style.opacity = '0';
+            } else {
+                menu.style.right = '-100%';
+                // Change the close button back to a hamburger icon
+                bar1.style.transform = 'rotate(0deg)';
+                bar1.style.position = 'static';
+                bar1.style.top = '0';
+                bar3.style.transform = 'rotate(0deg)';
+                bar3.style.position = 'static';
+                bar3.style.top = '0';
+                bar2.style.opacity = '1';
+            }
+        });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+footer footer footer
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        .mobile-footer {
+            display: flex;
+            justify-content: space-between;
+            background-color: #fff;
+            color: #000;
+            padding: 1px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .footer-item {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .footer-item a {
+            text-decoration: none;
+            color: #000;
+            font-size: 15px;
+        }
+
+        .footer-item i {
+            font-size: 24px;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        .category-menu {
+            display: none;
+            background-color: #000000;
+            padding: 10px;
+            position: fixed;
+            top: 37px;
+            bottom: 51.8px;
+            left: 0; /* Start with the menu open */
+            right: 0;
+            z-index: 1001;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: center;
+            overflow-y: auto;
+            padding-top: 1%;
+            padding-bottom: 1%;
+            padding-right: 5%;
+            padding-left: 5%;
+            transition: left 0.5s; /* Add a smooth transition effect for the left property */
+            animation-name: slide-in; /* Add animation */
+            animation-duration: 0.5s; /* Set animation duration */
+        }
+
+        @keyframes slide-in {
+            from {
+                left: -100%;
+            }
+            to {
+                left: 0;
+            }
+        }
+
+        .category-menu a {
+            width: 48%;
+            margin: 5px;
+            text-align: center;
+            font-size: 22px;
+            color: #010101;
+            background-color: #ffffff;
+            padding: 2px;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 1%;
+        }
+
+        .category-menu a i {
+            font-size: 24px;
+        }
+
+        .category-menu a.custom-link {
+    background-color: #d0f65f; /* Change the color to your desired background color */
+}
+
+
+
+
+
+
+
+
+
+
+p
+    {
+      font-size: 15px;
+      color: red;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.sell-menu {
+            display: none;
+            background-color: #000000;
+            padding: 10px;
+            position: fixed;
+            top: 37px;
+            bottom: 51.8px;
+            left: 0; /* Start with the menu open */
+            right: 0;
+            z-index: 1001;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-content: center;
+            overflow-y: auto;
+            padding-top: 5%;
+            padding-bottom: 10%;
+            padding-right: 5%;
+            padding-left: 5%;
+            transition: left 0.5s; /* Add a smooth transition effect for the left property */
+            animation-name: slide-out; /* Add animation */
+            animation-duration: 0.5s; /* Set animation duration */
+        }
+        @keyframes slide-out {
+            from {
+                right: -100%;
+            }
+            to {
+                left: 0;
+            }
+        }
+
+
+        .sell-menu a {
+            width: 48%;
+            margin: 10px;
+            text-align: center;
+            font-size: 20px;
+            color: #010101;
+            background-color: #ffffff;
+            padding: 1px;
+            border-radius: 5px;
+            text-decoration: none;
+            padding-top: 1cm;
+            padding-bottom: 1cm;
+            margin-top: 20%;
+        }
+
+        .sell-menu a i {
+            font-size: 24px;
+        }
+
+        .sell-menu a.custom-links {
+    background-color: #d0f65f; /* Change the color to your desired background color */
+}
+
+
+
+
+
+
+
+
+
+
+
+        .mobile-footer {
+            display: none;
+        }
+
+        @media screen and (max-width: 646px) {
+            .mobile-footer {
+                display: flex;
+            }
+
+
+
+
+
+
+
+            .category-menu.active {
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+            }
+
+            .category-menu a {
+                width: 100%;
+            }
+
+
+
+
+
+
+
+
+            .sell-menu.active {
+                display: flex;
+                flex-direction: row;
+                align-items: stretch;
+            }
+
+            .sell-menu a {
+                width: 100%;
+            }
+
+
+
+
+
+        }
+    </style>
+</head>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+    <div class="mobile-footer">
+        <div class="footer-item" id="categories-link">
+            <a href="#"><i class="fas fa-th-list"></i></a>
+            <a href="#">Categories</a>
+        </div>
+        <div class="footer-item">
+            <a href="{{ route('firstpage') }}">
+                <i class="fas fa-home"></i>
+            </a>
+            <a href="{{ route('firstpage') }}">Home</a>
+        </div>
+        <div class="footer-item">
+            <a href="#"><i class="fas fa-briefcase"></i></a>
+            <a href="#">My Ads</a>
+        </div>
+        <div class="footer-item"  id="selling-link">
+            <a href="#"><i class="fas fa-tag"></i></a>
+            <a href="#">Sell</a>
+        </div>
+    </div>
+
+
+
+
+
+
+
+    <div class="category-menu" id="categories-menu">
+        <a href="#">Cars for rent <i class="fas fa-car-side"> </i>
+            <p>Rent Cars With Best Offers!</P></a>
+        <a href="#">Bikes for rent <i class="fas fa-motorcycle"></i>
+            <p>Rent Bikes With Best Offers!</P></a>
+        <a href="#">Cars for lease <i class="fas fa-car"></i>
+            <p>Lease your favourite car!</P></a>
+        <a href="#">Bikes for lease <i class="fas fa-motorcycle"></i>
+            <p>Lease your favourite Bike!</P></a>
+        <a href="#" class="custom-link">Make your vehicle lease
+            <p>Earn by renting your vehicle $</P></a>
+        <a href="#"  class="custom-link">Make your vehicle rent
+            <p>Earn by Leasing your vehicle $</P>
+        </a>
+    </div>
+
+
+
+
+
+
+
+    <div class="sell-menu" id="selling-menu">
+        <a href="#" class="custom-link">Make your vehicle lease
+            <p>Earn by Renting your vehicle $</P>
+        </a>
+        <a href="#"  class="custom-link">Make your vehicle rent
+            <p>Earn by Leasing your vehicle $</P>
+        </a>
+    </div>
+
+
+
+
+
+
+    <script>
+
+
+
+
+
+
+        const categoriesLink = document.getElementById('categories-link');
+        const categoriesMenu = document.getElementById('categories-menu');
+
+        categoriesLink.addEventListener('click', function() {
+            categoriesMenu.classList.toggle('active');
+        });
+
+
+
+
+
+
+        const sellingLink = document.getElementById('selling-link');
+        const sellingMenu = document.getElementById('selling-menu');
+
+        sellingLink.addEventListener('click', function() {
+            sellingMenu.classList.toggle('active');
+        });
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+login and register in same view possible
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login and Registration Page</title>
+    <!-- Include necessary CSS and JavaScript libraries -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .alert-danger {
+            background-color: #f8d7da;
+            color: #721c24;
+            border-color: #f5c6cb;
+        }
+        .form-control {
+            border: 1px solid #ced4da;
+        }
+        .btn-toggle {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+        }
+        .btn-toggle:hover {
+            background-color: #0056b3;
+        }
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="card p-4">
+        <div class="text-center mb-4">
+            <img src="https://elsolutions.in/public/images/ellogo%20(1).jpg">
+        </div>
+        <div class="mt-0">
+            @if($errors->any())
+                <div class="col-12">
+                    @foreach ($errors->all() as $error)
+                        <div class="alert alert-danger">{{$error}}</div>
+                    @endforeach
+                </div>
+            @endif
+            @if(session()->has('error'))
+                <div class="alert alert-danger">{{session('error')}}</div>
+            @endif
+            @if(session()->has('success'))
+                <div class="alert alert-success">{{session('success')}}</div>
+            @endif
+        </div>
+
+        @if(Route::currentRouteName() === 'registration')
+            <div id="registrationForm">
+                <form action="{{ route('registration.post') }}" method="POST" class="ms-auto me-auto mt-4" style="width: 500px;">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" class="form-control" name="name">
+                    </div>
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-control" name="email">
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" class="form-control" name="password">
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Submit</button>
+                </form>
+            </div>
+        @else
+            <div id="loginForm">
+                <form method="POST" action="{{ route('login') }}" class="ms-auto me-auto mt-4" style="width: 500px;">
+                    @csrf
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" id="password" name="password" class="form-control" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Login</button>
+                </form>
+            </div>
+        @endif
+
+        <div class="text-center mt-3">
+            <button class="btn btn-toggle" onclick="toggleForm('loginForm')">Login</button>
+            <button class="btn btn-toggle" onclick="toggleForm('registrationForm')">Register</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    function toggleForm(formId) {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('registrationForm').style.display = 'none';
+        document.getElementById(formId).style.display = 'block';
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ menu open with blur , close buton and menu container click close
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background for blur effect */
+            z-index: 1;
+            backdrop-filter: blur(1px); /* Apply a blur effect to the background */
+        }
+
+        .menu-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            padding: 15%; /* Increase the padding to make the menu box larger */
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            width: 20%;
+        }
+
+        .menu-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu-button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-button" onclick="toggleMenu()">Open Menu</button>
+    <div class="menu-container" id="menuContainer">
+        <div class="menu-box" id="menuBox">
+            <span class="menu-close" onclick="toggleMenu()">&#10006;</span>
+            <h2>Menu</h2>
+            <!-- Add your menu content here -->
+            <p>This is the content of the menu.</p>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            var menuContainer = document.getElementById("menuContainer");
+            var menuBox = document.getElementById("menuBox");
+            if (menuContainer.style.display === "block") {
+                menuContainer.style.display = "none";
+            } else {
+                menuContainer.style.display = "block";
+                menuBox.onclick = function (event) {
+                    event.stopPropagation();
+                };
+                menuContainer.onclick = function () {
+                    toggleMenu();
+                };
+            }
+        }
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+menu opens with login and register form can switch each other
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .menu-container {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+            backdrop-filter: blur(0px);
+        }
+
+        .menu-box {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 30%;
+            text-align: center;
+        }
+
+        .menu-close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .menu-button {
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .menu-button:hover {
+            background: #0056b3;
+        }
+
+        .menu-box h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .menu-box form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .menu-box label {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .menu-box input[type="email"],
+        .menu-box input[type="text"],
+        .menu-box input[type="password"] {
+            width: 85%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .menu-box button[type="submit"] {
+            background: #4CAF50;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .menu-box button[type="submit"]:hover {
+            background: #45a045;
+        }
+
+        .toggle-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .toggle-button {
+            background: #80b5ee;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 0 10px;
+        }
+
+
+        .selected {
+    background: #0056b3;
+}
+
+
+
+
+        .toggle-button:hover {
+            background: #0056b3;
+        }
+
+        .registration-form {
+            display: none;
+        }
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <button class="menu-button" onclick="toggleMenu()">Open Menu</button>
+    <button class="menu-button" onclick="openRegistration()">Open Register</button>
+
+    <div class="menu-container" id="menuContainer">
+        <div class="menu-box" id="menuBox">
+            <span class="menu-close" onclick="toggleMenu()">&#10006;</span>
+            <div class="toggle-button-container">
+                <button class="toggle-button" onclick="showLoginForm()">Login</button>
+                <button class="toggle-button" onclick="showRegistrationForm()">Register</button>
+            </div>
+
+
+            <form id="loginForm" method="POST" action="{{ route('login') }}" class="ms-auto me-auto mt-4">
+                @csrf
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+                <button type="submit" class="menu-button">Login</button>
+            </form>
+            <form id="registrationForm" method="POST" action="{{ route('registration') }}" class="ms-auto me-auto mt-4 registration-form">
+                @csrf
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="regEmail">Email:</label>
+                <input type="email" id="regEmail" name="email" required>
+                <label for="regPassword">Password:</label>
+                <input type="password" id="regPassword" name="password" required>
+
+
+                <div class="mb-3">
+                    <label for="mode" class="form-label">Mode</label>
+                    <select id="mode" class="form-control" name="mode">
+                        <option value="" selected disabled>Select mode</option>
+                        <option value="administrator">Administrator</option>
+                        <option value="employee">Employee</option>
+                        <option value="customer">Customer</option>
+                    </select>
+                </div>
+
+
+
+                <button type="submit" class="menu-button">Register</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Initially hide the registration form and set the "Login" button as selected
+        document.getElementById("registrationForm").style.display = "none";
+        document.querySelector(".toggle-button:first-of-type").classList.add("selected");
+
+        function toggleMenu() {
+            var menuContainer = document.getElementById("menuContainer");
+            if (menuContainer.style.display === "block") {
+                menuContainer.style.display = "none";
+            } else {
+                menuContainer.style.display = "block";
+                menuBox.onclick = function (event) {
+                    event.stopPropagation();
+                };
+                menuContainer.onclick = function () {
+                    toggleMenu();
+                };
+            }
+            showLoginForm();
+        }
+
+
+
+
+
+
+        function openRegistration() {
+        var menuContainer = document.getElementById("menuContainer");
+        if (menuContainer.style.display === "block") {
+            menuContainer.style.display = "none";
+        } else {
+            menuContainer.style.display = "block";
+            menuBox.onclick = function (event) {
+                event.stopPropagation();
+            };
+            menuContainer.onclick = function () {
+                openRegistration();
+            };
+        }
+        showRegistrationForm(); // Always show the registration form when "Open Register" is clicked
+    }
+
+
+
+
+        function showLoginForm() {
+            var loginForm = document.getElementById("loginForm");
+            var registrationForm = document.getElementById("registrationForm");
+            loginForm.style.display = "block";
+            registrationForm.style.display = "none";
+
+            // Apply styles to the buttons
+            document.querySelector(".toggle-button:nth-of-type(1)").classList.add("selected");
+            document.querySelector(".toggle-button:nth-of-type(2)").classList.remove("selected");
+        }
+
+        function showRegistrationForm() {
+            var loginForm = document.getElementById("loginForm");
+            var registrationForm = document.getElementById("registrationForm");
+            loginForm.style.display = "none";
+            registrationForm.style.display = "block";
+
+            // Apply styles to the buttons
+            document.querySelector(".toggle-button:nth-of-type(1)").classList.remove("selected");
+            document.querySelector(".toggle-button:nth-of-type(2)").classList.add("selected");
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+code for user icon in welcome page with first two letter of users name
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/styles.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+
+
+.user-icon-container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 10px;
+        }
+
+
+        .user-icon {
+            background-color: #2196F3;
+            color: white;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 20px;
+            cursor: pointer; /* Add cursor style to indicate it's clickable */
+            position: relative; /* Make the user icon a positioned element */
+        }
+
+        .user-dropdown {
+            display: none;
+            position: absolute;
+            background-color: #fff;
+            min-width: 160px;
+            box-shadow: 0 4px 6px 0 rgba(0, 0, 0, 0.2);
+            z-index: 1;
+            top: 100%; /* Position dropdown below the user icon */
+            right: 0; /* Align dropdown with the left edge of the user icon */
+        }
+
+        .user-dropdown a {
+            padding: 10px;
+            text-decoration: none;
+            display: block;
+        }
+
+        .user-dropdown a:hover {
+            background-color: #f2f2f2;
+        }
+
+
+
+
+
+
+
+        .user-dropdown i {
+        color: rgb(0, 0, 0); /* Change 'blue' to the color you want */
+    }
+
+    /* Change the color of the text in the links */
+    .user-dropdown a {
+        color: rgb(0, 0, 0); /* Change 'red' to the color you want */
+        padding: 15px 10px;
+    }
+
+    .user-dropdown a:hover {
+        background-color: #dad7d7;
+    }
+
+
+
+
+
+
+
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="user-icon-container">
+
+<div class="user-icon" id="userIcon">
+    {{ strtoupper(substr(Auth::user()->name, 0, 1)) }}
+    <div class="user-dropdown" id="userDropdown">
+        <a href="#"><i class="fas fa-user"></i> My Account</a>
+        <a href="#"><i class="fas fa-heart"></i> My Ads</a>
+        <a href="#"><i class="fas fa-question-circle"></i> Help</a>
+        <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+    </div>
+</div>
+
+</div>
+
+<script>
+    var userIcon = document.getElementById('userIcon');
+    var userDropdown = document.getElementById('userDropdown');
+
+    userIcon.addEventListener('click', function(e) {
+        e.stopPropagation(); // Prevent the click event from propagating to the window.onclick
+        if (userDropdown.style.display === 'block') {
+            userDropdown.style.display = 'none';
+        } else {
+            userDropdown.style.display = 'block';
+        }
+    });
+
+    // Close the dropdown when the user clicks outside of it
+    window.onclick = function(event) {
+        if (event.target !== userIcon) {
+            userDropdown.style.display = 'none';
+        }
+    }
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+useful page for getting data, when uploaded by user and show in webpage as responsive columns.
+
+from project el solutions
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@extends('layout.layout')
+@section('title', 'products')
+@section('content')
+<style>
+    h5 {
+        background-color: #007bff;
+        padding:8px;
+    }
+
+
+
+        .container {
+        max-width: 1350px; /* Adjust this value to set the maximum width of your container */
+        margin: 0 auto; /* Center the container horizontally */
+        padding-top: 100px;
+    }
+    /* ... other styles ... */
+
+    .custom-card {
+        margin: 10px 10px 10px 0; /* Adjust the margin values as needed (top, right, bottom, left) */
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 10px;
+    }
+
+
+    .custom-card h5 {
+        font-size: 24px;
+        margin-bottom: 10px;
+        color: white; /* Set the text color to white */
+    }
+
+    .custom-card li {
+        margin-top: 15px;
+    }
+
+
+
+    /* Add padding to the content to prevent it from being overlapped by the fixed header */
+
+
+
+</style>
+
+    <!-- Add a container for the header to maintain the header height -->
+
+
+
+
+
+<div class="container">
+    <h1>Create Product</h1>
+    <br>
+
+    <!-- Create Lead Button -->
+    <a href="{{ route('createproduct') }}" class="btn btn-primary">Create Product</a>
+    <br> <br>
+
+    <div class="row">
+        @foreach ($product as $product)
+        @php
+        $updatedDate = \Carbon\Carbon::parse($product->updated_at);
+        $today = \Carbon\Carbon::today();
+        $diffInMonths = $today->diffInMonths($updatedDate);
+        $boxClass = '';
+        if ($diffInMonths >= 3) {
+            $boxClass = 'bg-brickred';
+        } elseif ($diffInMonths >= 1) {
+            $boxClass = 'bg-lightyellow';
+        }
+        @endphp
+        <div class="col-md-6 mb-3">
+            <div class="card custom-card {{ $boxClass }} shadow rounded">
+                <div class="card-body">
+                    <h5 class="card-title text-white">{{ $product->name }}</h5> <!-- Add text-white class to set the text color to white -->
+                    <ul class="list-unstyled">
+                        <li><strong>Rate:</strong> {{ $product->rate }}</li>
+                        <li><strong>Notes:</strong> {{ $product->notes}}</li>
+                    </ul>
+                    <a href="{{url('viewproduct/'.$product->id)}}" class="btn btn-primary">View</a>
+
+
+                </div>
+            </div>
+        </div>
+        @endforeach
+    </div>
+</div>
+
+
+
+<script>
+    function confirmDelete() {
+        // Show a confirmation dialog
+        const result = confirm('Are you sure you want to delete this item?');
+        // If the user confirms, proceed with the deletion
+        if (result) {
+            return true;
+        } else {
+          // If the user cancels, prevent the default link action (no data deletion)
+            return false;
+        }
+    }
+</script>
+
+
+
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+code for   welcomepage and loginpage with images that can slide in x axis correctly
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@extends('layout.firstpagelayout')
+@section('title', 'wheelsonlese')
+@section('content')
+<style>
+    /* Define a container style */
+    .content-container {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 10px;
+        display: flex; /* Display children in a row */
+        justify-content: flex-start; /* Adjust alignment */
+        overflow-x: auto; /* Allow horizontal scrolling */
+    }
+
+    /* Style for individual items */
+    .content-item {
+        text-align: center;
+        margin-left: 3%;
+        margin-right: 3%; /* Add some space between elements */
+        text-decoration: none; /* Remove underline from anchor */
+        white-space: nowrap; /* Prevent text from wrapping */
+        min-width: 2cm;
+    }
+
+    .content-item p {
+        color: black; /* Set text color to black */
+        font-size: 14px;
+
+    }
+    .content-item a {
+        text-decoration: none;
+    }
+
+    .content-item img {
+        width: 60%; /* Ensure the image takes up the full width of the container */
+    }
+
+
+
+
+
+    @media screen and (max-width: 932px) {
+
+        .content-item {
+
+        min-width: 2.3cm;
+    }
+
+    .content-item img {
+        width: 65%; /* Ensure the image takes up the full width of the container */
+    }
+
+    }
+
+
+
+
+</style>
+
+<div class="content-scroll-container">
+    <div class="content-container">
+        <div class="content-item">
+            <a href="#">
+            <img src="{{ asset('images/bikesforrent.jpeg') }}" alt="Ads">
+            <p>My ADS</p>
+            </a>
+        </div>
+
+    <div class="content-item">
+        <a href="#">
+        <img src="{{ asset('images/bikesforrent.jpeg') }}" alt="Ads">
+        <p>Bikes for rent</p>
+    </a>
+    </div>
+
+    <div class="content-item">
+        <a href="#">
+        <img src="{{ asset('images/bikesforrent.jpeg') }}" alt="Ads">
+        <p>Cars for rent</p>
+    </a>
+    </div>
+
+    <div class="content-item">
+        <a href="#">
+        <img src="{{ asset('images/bikesforrent.jpeg') }}" alt="Ads">
+        <p>Bikes for Lease</p>
+    </a>
+    </div>
+
+    <div class="content-item">
+        <a href="#">
+        <img src="{{ asset('images/bikesforrent.jpeg') }}" alt="Ads">
+        <p>Cars for Lease</p>
+    </a>
+    </div>
+
+    <div class="content-item">
+        <a href="#">
+        <img src="{{ asset('images/bikesforrent.jpeg') }}" alt="Ads">
+        <p>Make a Rent</p>
+    </a>
+    </div>
+
+    <div class="content-item">
+        <a href="#">
+        <img src="{{ asset('images/bikesforrent.jpeg') }}" alt="Ads">
+        <p>Make a Lease</p>
+    </a>
+    </div>
+</div>
+</div>
+@endsection
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+hamburger  full code
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hamburger Icon Login & Register</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .navbar {
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 20px;
+        }
+
+        .bar {
+            background-color: #fff;
+            height: 3px;
+            width: 30px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .menu {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align to the left */
+            position: fixed;
+            top: 41px;
+            right: -100%;
+            background-color: #333;
+            width: 100%;
+            height: calc(100% - 50px);
+            padding: 20px 0;
+            z-index: 1;
+            transition: right 0.3s ease-in-out;
+        }
+
+        .menu-button {
+            margin: 10px 0;
+            transition: opacity 0.3s ease-in-out;
+            margin-top: 30px;
+            border-bottom: 2px  solid #fff;
+            border-bottom-left-radius: 0.1cm;
+        }
+
+        .menu-button a {
+            text-decoration: none;
+            color: #fff;
+            font-size: 20px; /* Increase font size */
+            margin-left: 10px; /* Add space between items */
+
+        }
+
+        .menu-button a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 150px;
+        }
+
+        button:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="menu-icon" id="menu-icon">
+            <div class="bar" id="bar1"></div>
+            <div class="bar" id="bar2"></div>
+            <div class="bar" id="bar3"></div>
+        </div>
+        <div class="menu" id="menu">
+            <div class="menu-button">
+                <a href="{{ route('login') }}" id="login-button">🔒 Login</a>
+            </div>
+            <div class="menu-button">
+                <a href id="register-button">📝 Register</a>
+            </div>
+
+            <div class="menu-button">
+                <a href id="offers">💰 Offers</a>
+            </div>
+
+            <div class="menu-button">
+                <a href id="vehicle-lease-button">🚗 Make Vehicle lease</a>
+            </div>
+
+
+            <div class="menu-button">
+                <a href id="vehicle-rent-button">🚗 Make Vehicle Rent</a>
+            </div>
+
+
+            <div class="menu-button">
+                <a href id="terms and conditions">📜 Terms & Conditions</a>
+            </div>
+            <div class="menu-button">
+                <a href id="Privacy Policy">🔐 Privacy Policy</a>
+            </div>
+            <div class="menu-button">
+                <a href id="contact us">📞 Contact Us</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        const menuIcon = document.getElementById('menu-icon');
+        const menu = document.getElementById('menu');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+
+        let isMenuOpen = false;
+
+        menuIcon.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+
+            if (isMenuOpen) {
+                menu.style.right = '0';
+                bar1.style.transform = 'rotate(45deg)';
+                bar1.style.position = 'absolute';
+                bar1.style.top = '23px';
+                bar3.style.transform = 'rotate(-45deg)';
+                bar3.style.position = 'absolute';
+                bar3.style.top = '23px';
+                bar2.style.opacity = '0';
+            } else {
+                menu.style.right = '-100%';
+                bar1.style.transform = 'rotate(0deg)';
+                bar1.style.position = 'static';
+                bar1.style.top = '0';
+                bar3.style.transform = 'rotate(0deg)';
+                bar3.style.position = 'static';
+                bar3.style.top = '0';
+                bar2.style.opacity = '1';
+            }
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
